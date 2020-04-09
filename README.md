@@ -8,7 +8,7 @@ As with other GhostPack projects, GhostBuild is licensed under the BSD 3-Clause 
 
 ## Instructions
 
-*These launchers include compiled/compressed/encoded versions of GhostPack utilities.  However,  you should inspect and compile your own versions*
+*These launchers include compiled/compressed/encoded versions of GhostPack utilities.  However,  you should inspect and compile your own versions.*
 
 1) Compile the target GhostPack project with the desired .NET Framework version.
 2) Compress the .NET assembly with [Out-CompressedDll](https://github.com/PowerShellMafia/PowerSploit/blob/master/ScriptModification/Out-CompressedDll.ps1).
