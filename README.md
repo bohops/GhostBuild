@@ -2,7 +2,7 @@
 
 ----
 
-GhostBuild is a (POC) collection of simple MSBuild launchers for various [GhostPack](https://github.com/GhostPack) projects (authored by [@harmj0y](https://twitter.com/harmj0y)).
+GhostBuild is a (POC) collection of simple MSBuild launchers for various [GhostPack](https://github.com/GhostPack) projects (authored by [@harmj0y](https://twitter.com/harmj0y)).  Other .Net project launchers may be included later.
 
 As with other GhostPack projects, GhostBuild is licensed under the BSD 3-Clause license.
 
