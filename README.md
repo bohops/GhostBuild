@@ -17,7 +17,7 @@ As with other GhostPack projects, GhostBuild is licensed under the BSD 3-Clause 
 - Assign GhostPack .Net assembly arguments to the args variable if required.  This is a string array, so quote arguments and separate by commas (e.g. "arg1" , "arg2").
 - Copy the compressed .Net assembly from the Out-CompressedDll operation and assign it to the compressedBin variable.
 - Copy the byte length/size of the compressed .Net assembly from the Out-CompressedDll operation and assign it to the compressedBinSize variable.
-4) Build and run with MSBuild.exe.
+4) Build and run with the proper version of MSBuild.exe.
 - Example: C:\Windows\Microsoft.Net\Framework64\v4.0.30319\MSBuild.exe c:\path\to\project.xml
   
 ## Ethics
