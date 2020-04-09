@@ -24,7 +24,7 @@ GhostBuild is designed to help security professionals perform ethical and legal 
 
 ## Credits
 
-- [@harmj0y](https://twitter.com/harmj0y)) -  security researcher and primary author of Ghostpack 
-- [@mattifestation](https://twitter.com/mattifestation)] - security researcher and author of the [Out-CompressedDll](https://github.com/PowerShellMafia/PowerSploit/blob/master/ScriptModification/Out-CompressedDll.ps1) utility
-- [@subTee](https://twitter.com/subTee)) - MSBuild (.Net) wizard and security researcher
-- [@gentilkiwi](https://twitter.com/gentilkiwi - [Mimikatz](https://github.com/gentilkiwi/mimikatz) author and security researcher
+- [@harmj0y](https://twitter.com/harmj0y) -  security researcher and primary author of Ghostpack 
+- [@mattifestation](https://twitter.com/mattifestation) - security researcher and author of the [Out-CompressedDll](https://github.com/PowerShellMafia/PowerSploit/blob/master/ScriptModification/Out-CompressedDll.ps1) utility
+- [@subTee](https://twitter.com/subTee) - MSBuild (.Net) wizard and security researcher
+- [@gentilkiwi](https://twitter.com/gentilkiwi) - [Mimikatz](https://github.com/gentilkiwi/mimikatz) author and security researcher
