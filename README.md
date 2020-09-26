@@ -26,6 +26,12 @@ As with other GhostPack projects, GhostBuild is licensed under the BSD 3-Clause 
 
 GhostBuild is designed to help security professionals perform ethical and legal security assessments and penetration tests. Do not use for nefarious purposes.
 
+## Defensive Considerations
+
+- MSBuild is a signed binary that can be used to execute unsigned code for Application Control and EDR bypass.
+- Disable MSBuild.exe (with Application Control solution) if it does not serve a business purpose.
+- Monitor MSBuild.exe execution events if it does serve a business purpose.
+
 ## Credits
 
 - [@harmj0y](https://twitter.com/harmj0y) -  security researcher and primary author of GhostPack 
